@@ -7,10 +7,7 @@ class CardReader:
     def __init__(self,logger=logging.getLogger(__name__)):
         self.logger = logger
         #Open COM port
-        port = 'COM24'
-        print("Device setup")
-        print("Which COM port do you want to use?")
-        port = input()
+        port = "/dev/ttyACM0" #hardcoded for linux
         self.ser = serial.Serial(port,baudrate=9600,parity=serial.PARITY_ODD,stopbits=serial.STOPBITS_TWO,bytesize=serial.SEVENBITS)
         self.logger.info("{p} port established".format(p = port))		
 

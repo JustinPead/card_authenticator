@@ -11,7 +11,7 @@ class Student:
         self.get_student_info()
 
     def establish_connection(self):
-        self.conn = pymssql.connect(os.environ["ENDPOINT"],os.environ["USERNAME"],os.environ["PASSWORD"], 'DB400_reports')
+        self.conn = pymssql.connect(os.environ["ENDPOINT"],os.environ["USERNAME"],os.environ["PASSWORD"], 'DB400_reports')#These are private environment variables
         self.cursor = self.conn.cursor()
         
     def get_student_info(self):
